@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Official Tactical Palette CSS Variables */
+  --color-forest: #26382A;
+  --color-olive: #414B32;
+  --color-field: #747653;
+  --color-khaki: #B7AA83;
+  --color-sandstone: #D9D2B8;
+  --color-command: #151A17;
+  --color-tactical-grey: #E8EBDD;
+  --color-tactical-muted: #A9B39F;
+
+  /* Functional Status */
+  --status-success: #48C774;
+  --status-warning: #F2B84B;
+  --status-critical: #FF6464;
+  --status-info: #62B7E8;
+
+  /* Surfaces */
+  --surface-main: #151A17;
+  --surface-card: #202821;
+  --surface-raised: #263128;
+  --surface-border: #465044;
+  --text-primary: #E8EBDD;
+  --text-secondary: #A9B39F;
+}
+
+@layer base {
+  body {
+    background-color: var(--surface-main);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Tabular figures for data tables, metrics, timestamps */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom scrollbars for military command dark theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #151A17;
+}
+::-webkit-scrollbar-thumb {
+  background: #414B32;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #747653;
+}
+
+/* Subtle Woodland Camo pattern for branding headers, decorative banners, and login panel only */
+.woodland-camo-subtle {
+  background-color: #202821;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(38, 56, 42, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(65, 75, 50, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 40% 80%, rgba(116, 118, 83, 0.25) 0%, transparent 35%),
+    radial-gradient(circle at 90% 85%, rgba(21, 26, 23, 0.6) 0%, transparent 50%);
+  background-size: 300px 300px;
+}
+
+/* Tactical grid overlay subtle pattern */
+.tactical-grid {
+  background-image: linear-gradient(to right, rgba(70, 80, 68, 0.15) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(70, 80, 68, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .card, .table-container {
+    border: 1px solid #cccccc !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+  }
+}

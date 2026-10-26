@@ -1,0 +1,97 @@
+{
+  "activeRoleId": "USR-001",
+  "users": [
+    {
+      "id": "USR-001",
+      "username": "admin.vance",
+      "displayName": "Col. Marcus Vance",
+      "role": "System Administrator",
+      "clearance": "TOP SECRET"
+    },
+    {
+      "id": "USR-002",
+      "username": "cmd.holloway",
+      "displayName": "Maj. Elena Holloway",
+      "role": "Command Supervisor",
+      "clearance": "SECRET"
+    },
+    {
+      "id": "USR-003",
+      "username": "pers.sterling",
+      "displayName": "Capt. Daniel Sterling",
+      "role": "Personnel Officer",
+      "clearance": "SECRET"
+    },
+    {
+      "id": "USR-004",
+      "username": "med.chen",
+      "displayName": "Maj. Dr. Sarah Chen, MD",
+      "role": "Medical Officer",
+      "clearance": "SECRET"
+    },
+    {
+      "id": "USR-005",
+      "username": "log.rodriguez",
+      "displayName": "CWO3 Carlos Rodriguez",
+      "role": "Logistics Officer",
+      "clearance": "CONFIDENTIAL"
+    },
+    {
+      "id": "USR-006",
+      "username": "maint.kovacs",
+      "displayName": "1Sgt. Viktor Kovacs",
+      "role": "Maintenance Officer",
+      "clearance": "CONFIDENTIAL"
+    },
+    {
+      "id": "USR-007",
+      "username": "train.bishop",
+      "displayName": "SFC Marcus Bishop",
+      "role": "Training Officer",
+      "clearance": "CONFIDENTIAL"
+    },
+    {
+      "id": "USR-008",
+      "username": "audit.reyes",
+      "displayName": "Inspector Linda Reyes",
+      "role": "Read-Only Auditor",
+      "clearance": "TOP SECRET"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "AUD-101012",
+      "timestamp": "2026-10-24T17:15:01.012Z",
+      "actorName": "Tactical Operator",
+      "actorRole": "Medical Officer",
+      "action": "RTD_AUTHORIZED",
+      "module": "Medical Management",
+      "targetRecord": "CAS-2026-081",
+      "details": "Medical clearance set to Cleared Full Duty for CAS-2026-081",
+      "ipAddress": "::1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "AUD-094214",
+      "timestamp": "2026-10-24T17:14:54.214Z",
+      "actorName": "Tactical Operator",
+      "actorRole": "Logistics Officer",
+      "action": "AUTHORIZATION_DENIED",
+      "module": "/api/casualties/CAS-2026-081/rtd",
+      "targetRecord": "N/A",
+      "details": "Role 'Logistics Officer' rejected. Allowed: Medical Officer",
+      "ipAddress": "::1",
+      "status": "DENIED"
+    },
+    {
+      "id": "AUD-SERVER-01",
+      "timestamp": "2026-10-24T17:14:39.527Z",
+      "actorName": "Col. Marcus Vance",
+      "actorRole": "System Administrator",
+      "action": "SERVER_BOOTSTRAP",
+      "module": "Security & Infrastructure",
+      "details": "Express REST API server initialized with RBAC security policies.",
+      "status": "SUCCESS"
+    }
+  ]
+}
